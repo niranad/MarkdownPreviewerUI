@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+#editor-div {
+  position: relative;
+  height: 40vh;
+  margin: auto;
+  padding: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+textarea {
+  border: 1px solid black;
+  border-top: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 10px 2px #cd853f;
+  background-color: #ffdab9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#preview-div {
+  position: relative;
+  top: 4vh;
+  margin: auto;
+  padding: 0;
+  box-shadow: 1px 1px 10px 2px #cd853f;
+}
+
+#preview {
+  background-color: #ffdab9;
+  border: 1px solid black;
+  border-top: none;
+  overflow: auto;
+}
+
+header {
+  font-weight: 900;
+  padding: 4px;
+}
+
+span {
+  float: right;
+  cursor: pointer;
+  border: 1px solid;
+}
+
+#preview {
+  font-size: 16px;
+  font-family: Lucida;
+  padding: 0px 0px 0px 5px;
+  margin-top: 0;
+}
+
+#preview blockquote {
+  border-left: 5px solid #6495ed;
+  border-radius: 2px;
+  padding-left: 10px;
+}
+
+#preview a {
+  color: blue;
+  text-decoration: none;
+}
+
+#preview table,
+th,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#preview code {
+  background-color: white;
+}
+
+.head {
+  margin-bottom: 0;
+  border: 1px solid black;
+  padding: 3px;
+  background-color: #cd853f;
+  box-shadow: 1px 1px 10px 2px #cd853f;
+}
+
+@media screen and (min-width: 1367px) {
+  #editor-div {
+    width: 50vw;
+  }
+  #preview-div {
+    width: 70vw;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1366px) {
+  #editor-div {
+    width: 45vw;
   }
-  to {
-    transform: rotate(360deg);
+  #preview-div {
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #editor-div {
+    width: 50vw;
+  }
+  #preview-div {
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  #editor-div {
+    width: 55vw;
+  }
+  #preview-div {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #editor-div {
+    width: 60vw;
+  }
+  #preview-div {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #editor-div {
+    width: 65vw;
+  }
+  #preview-div {
+    width: 85vw;
+  }
+
+  @media screen and (max-width: 500px) {
+    #editor-div {
+      width: 75vw;
+    }
+    #preview-div {
+      width: 99vw;
+    }
   }
 }
