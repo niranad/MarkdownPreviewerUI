@@ -1,6 +1,6 @@
 {
-  "short_name": "MPA",
-  "name": "Markdown Previever App",
+  "short_name": "Markdown Previewer",
+  "name": "Markdown Previever",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
