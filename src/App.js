@@ -5,33 +5,39 @@ import './App.css'
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       input: '',
       editorMaxView: false,
       previewMaxView: false,
-    }
+    };
   }
 
-  toggleEditor() {
-    this.setState((state) => ({ editorMaxView: !state.editorMaxView }))
-    if (this.state.editorMaxView) {
-      document.getElementById('editor-div').style.width = '100vw'
-      document.getElementById('editor-div').style.height = '100vh'
+  toggleEditor = () => {
+    if (!this.state.editorMaxView) {
+      document.getElementById('editor-div').style.width = '95vw';
+      document.getElementById('editor-div').style.height = '95vh';
     } else {
-      document.getElementById('editor-div').style.height = '40vh'
+      document.getElementById('editor-div').style.width = '50vw';
+      document.getElementById('editor-div').style.height = '40vh';
     }
-  }
+    this.setState((state) => ({ editorMaxView: !state.editorMaxView }));
+  };
 
-  togglePreview() {
-    this.setState((state) => ({ previewMaxView: !state.previewMaxView }))
-    if (this.state.previewMaxView) {
-      document.getElementById('preview-div').style.width = '100vw'
-      document.getElementById('preview-div').style.height = '100vh'
+  togglePreview = () => {
+    if (!this.state.previewMaxView) {
+      document.getElementById('preview-div').style.width = '97vw';
+      document.getElementById('preview-div').style.height = '97vh';
     } else {
-      document.getElementById('preview-div').style.top = '4vh'
+      let prevStyle = document.getElementById('preview-div').style;
+      if (window.innerWidth > 880) {
+        prevStyle.width = '72vw';
+      } else if (window.innerWidth > 500) {
+        prevStyle.width = '82vw';
+      } 
     }
-  }
+    this.setState((state) => ({ previewMaxView: !state.previewMaxView }));
+  };
 
   componentDidMount() {
     const defaultMarkdown = `# Welcome to my React Markdown Previewer!
@@ -76,46 +82,36 @@ And here. | Okay | I think we get it.
 2. Second list.
 3. That's enough! Let's not forget images:
 
-![React Logo w/ Text](https://goo.gl/Umyytc)`
+![React Logo w/ Text](https://goo.gl/Umyytc)`;
 
     this.setState({
       input: defaultMarkdown,
-    })
+    });
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({
       input: event.target.value,
-    })
-
-    document
-      .getElementById('preview-toggle')
-      .addEventListener('click', this.togglePreview)
-    document
-      .getElementById('editor-toggle')
-      .addEventListener('click', this.toggleEditor)
-  }
-
-  componentWillUnmount() {
-    document
-      .getElementById('preview-toggle')
-      .removeEventListener('click', this.togglePreview)
-    document
-      .getElementById('editor-toggle')
-      .removeEventListener('click', this.toggleEditor)
-  }
+    });
+  };
 
   render() {
     return (
-      <div className="container-div">
+      <div className='container-div'>
         <Editor
           input={this.state.input}
-          handleChange={this.handleChange.bind(this)}
+          handleChange={this.handleChange}
+          isMaxView={this.state.editorMaxView}
+          editorToggler={this.toggleEditor}
         />
-        <Preview input={this.state.input} />
+        <Preview
+          input={this.state.input}
+          isMaxView={this.state.previewMaxView}
+          previewToggler={this.togglePreview}
+        />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
