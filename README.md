@@ -17,4 +17,4 @@ A markdown previewer static page built with [Reactjs](https://reactjs.org).
 The project with all tests passing is live with Github pages at [markdown-previewer](https://niranad.github.io/markdown-previewer). The specified tests can be run against the project via this [codepen](https://codepen.io/niranad/full/eYvgWKR).
 
 ## Origin
-The project is one of the five (5) projects in Freecodecamp's Front End Development Libraries 300 hours course work and its objectives are stated at [Build a JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer).
+The project is one of the five (5) projects in Freecodecamp's Front End Development Libraries 300 hours course work and its objectives are stated at [Build a Markdown Previewer](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer).
