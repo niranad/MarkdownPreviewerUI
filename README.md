@@ -9,7 +9,7 @@ A markdown previewer static page built with [Reactjs](https://reactjs.org).
 - CSS
 
 ## Core Lessons
-- Using the marked javascript module.
+- Using the [marked](https://marked.js.org) markdown parser and compiler.
 - Manipulating Component's state with the setState method.
 - Using React's synthetic event attribute
 
