@@ -109,23 +109,14 @@ td {
 
 @media screen and (max-width: 880px) {
   #editor-div {
-    width: 55vw;
+    width: 57vw;
   }
   #preview-div {
     width: 80vw;
   }
 }
 
-@media screen and (max-width: 720px) {
-  #editor-div {
-    width: 60vw;
-  }
-  #preview-div {
-    width: 85vw;
-  }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   #editor-div {
     width: 65vw;
   }
@@ -139,7 +130,7 @@ td {
       width: 75vw;
     }
     #preview-div {
-      width: 95vw;
+      width: 92vw;
     }
 }
 

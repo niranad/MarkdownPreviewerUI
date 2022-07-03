@@ -1,7 +1,7 @@
-import React from 'react'
-import { Preview } from './preview'
-import { Editor } from './editor'
-import './App.css'
+import React from 'react';
+import { Preview } from './preview';
+import { Editor } from './editor';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,27 +15,52 @@ class App extends React.Component {
 
   toggleEditor = () => {
     if (!this.state.editorMaxView) {
-      document.getElementById('editor-div').style.width = '95vw';
-      document.getElementById('editor-div').style.height = '95vh';
+      document.querySelector('#editor-div').style.width = '95vw';
+      document.querySelector('#editor-div').style.height = '95vh';
     } else {
-      document.getElementById('editor-div').style.width = '50vw';
-      document.getElementById('editor-div').style.height = '40vh';
+      let editorStyle = document.querySelector('#editor-div').style;
+
+      if (window.innerWidth >= 1367) {
+        editorStyle.width = '50vw';
+      } else if (window.innerWidth > 1024 && window.innerWidth <= 1366) {
+        editorStyle.width = '45vw';
+      } else if (window.innerWidth > 880 && window.innerWidth <= 1024) {
+        editorStyle.width = '50vw';
+      } else if (window.innerWidth > 640 && window.innerWidth <= 880) {
+        editorStyle.width = '57vw';
+      } else if (window.innerWidth > 500 && window.innerWidth <= 640) {
+        editorStyle.width = '65vw';
+      } else {
+        editorStyle.width = '75vw';
+      }
+
+      document.querySelector('#editor-div').style.height = '40vh';
     }
     this.setState((state) => ({ editorMaxView: !state.editorMaxView }));
   };
 
   togglePreview = () => {
     if (!this.state.previewMaxView) {
-      document.getElementById('preview-div').style.width = '97vw';
-      document.getElementById('preview-div').style.height = '97vh';
+      document.querySelector('#preview-div').style.width = '97vw';
+      document.querySelector('#preview-div').style.height = '97vh';
     } else {
-      let prevStyle = document.getElementById('preview-div').style;
-      if (window.innerWidth > 880) {
-        prevStyle.width = '72vw';
-      } else if (window.innerWidth > 500) {
-        prevStyle.width = '82vw';
-      } 
+      let prevStyle = document.querySelector('#preview-div').style;
+
+      if (window.innerWidth >= 1367) {
+        prevStyle.width = '70vw';
+      } else if (window.innerWidth > 1024 && window.innerWidth <= 1366) {
+        prevStyle.width = '65vw';
+      } else if (window.innerWidth > 880 && window.innerWidth <= 1024) {
+        prevStyle.width = '75vw';
+      } else if (window.innerWidth > 640 && window.innerWidth <= 880) {
+        prevStyle.width = '80vw';
+      } else if (window.innerWidth > 500 && window.innerWidth <= 640) {
+        prevStyle.width = '85vw';
+      } else {
+        prevStyle.width = '92vw';
+      }
     }
+
     this.setState((state) => ({ previewMaxView: !state.previewMaxView }));
   };
 
@@ -115,3 +140,4 @@ And here. | Okay | I think we get it.
 }
 
 export default App;
+

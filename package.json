@@ -1,6 +1,5 @@
 {
   "name": "markdownpreviewer",
-  "homepage": "https://niranad.github.io/markdown-previewer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
